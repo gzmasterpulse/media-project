@@ -75,7 +75,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 This project use bootstrap framework.
 
 ````
-.
 ├── README.md
 ├── jsconfig.json
 ├── package.json
