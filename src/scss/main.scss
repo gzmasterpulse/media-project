@@ -1,0 +1,233 @@
+/***************Main Page UI Style**************/
+/**
+** include mixin path from 'framework/mixins/_breakpoints.scss'
+xs: 0,
+sm: 576px,
+md: 768px,
+lg: 992px,
+xl: 1200px,
+xxl:1441px
+**/
+
+//mobile display
+.mb {
+    display: none;
+
+    // Small devices (landscape phones, less than 768px)
+    // @media (max-width: 767.98px) { ... }
+    @include media-breakpoint-down(sm) {
+        display: block;
+    }
+}
+
+//pc display
+.pc {
+    display: block;
+
+    // Small devices (landscape phones, less than 768px)
+    // @media (max-width: 767.98px) { ... }
+    @include media-breakpoint-down(sm) {
+        display: none;
+    }
+}
+
+.#{$prefix-base}-nav {
+    padding-top: rem(30);
+    padding-left: rem(70);
+    padding-right: rem(70);
+    padding-bottom: rem(40);
+    height: 15vh;
+
+    &-logo {
+        img {
+            width: rem(170);
+        }
+    }
+
+    &-right {
+        display: flex;
+        align-items: center;
+        justify-content: right;
+        justify-items: center;
+
+        &-button {
+            &-logout {
+                height: rem(32);
+                background-color: $blue;
+                font-size: rem(12);
+                font-weight: 400;
+                border-radius: rem($border-radius-input-base);
+                font-family: $font-family-base;
+            }
+        }
+
+        &-user {
+            &-info {
+                padding-left: rem(40);
+                padding-right: rem(20);
+                font-size: rem(15);
+                text-align: right;
+                line-height: 1.1;
+
+                span {
+                    font-size: rem(11);
+                    color: $input-placeholder-color;
+                }
+
+                @include media-breakpoint-down(sm) {
+                    display: none;
+                }
+            }
+
+            &-icon {
+                width: rem(40);
+                height: rem(40);
+                background-color: $background-color-base;
+                border-radius: 15px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                justify-items: center;
+
+                // Small devices (landscape phones, less than 768px)
+                // @media (max-width: 767.98px) { ... }
+                @include media-breakpoint-down(sm) {
+                    display: none;
+                }
+            }
+
+        }
+    }
+
+    // Small devices (landscape phones, less than 768px)
+    // @media (max-width: 767.98px) { ... }
+    @include media-breakpoint-down(xs) {
+        padding-left: rem(40);
+        padding-right: rem(40);
+    }
+}
+
+.#{$prefix-base}-body {
+    background-color: $white;
+    padding: 0 0;
+    min-height: 100vh;
+
+    &-container {
+        height: 85vh;
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+}
+
+.#{$prefix-base}-content {
+    background-color: $offwhite;
+    border-radius: rem($border-radius-base);
+    margin-left: rem(20);
+    margin-right: rem(20);
+    margin-bottom: rem(20);
+    height: calc(85vh - 1.25rem*1);
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    position: relative;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+
+    &-title {
+        font-weight: 700;
+        font-size: rem(40);
+        line-height: 1.2;
+
+        // Small devices (landscape phones, less than 768px)
+        // @media (max-width: 767.98px) { ... }
+        @include media-breakpoint-down(xs) {
+            font-size: rem(30);
+        }
+    }
+
+    &-subtitle {
+        font-weight: 700;
+        font-size: rem(40);
+        color: $blue;
+
+        // Small devices (landscape phones, less than 768px)
+        // @media (max-width: 767.98px) { ... }
+        @include media-breakpoint-down(xs) {
+            font-size: rem(30);
+        }
+    }
+
+    &-desc {
+        position: absolute;
+        left: 40vw;
+        top: 25vh;
+
+        &-block {
+            background-color: $white;
+            border-radius: rem($border-radius-base);
+            font-size: rem(11);
+            padding: rem(30) rem(20);
+
+            p {
+                margin-bottom: 0px;
+            }
+
+            i {
+                color: $blue;
+                font-style: normal;
+            }
+        }
+
+        // Small devices (landscape phones, less than 768px)
+        // @media (max-width: 767.98px) { ... }
+        @include media-breakpoint-down(sm) {
+            position: relative;
+            top: rem(-50);
+            left: 0;
+
+            &-block {
+                font-size: rem(13);
+                background-color: $othwhite;
+            }
+        }
+
+        // Extra large devices (large desktops, 1200px and up)
+        //@media (min-width: 1200px) { ... }
+        @include media-breakpoint-up(xl) {
+            left: 43vw;
+        }
+    }
+
+    &-footer {
+        position: absolute;
+        bottom: 0px;
+        max-width: rem(780);
+
+        // Extra large devices (large desktops, 1441px and up)
+        //@media (min-width: 1441px) { ... }
+        @include media-breakpoint-up(xxl) {
+            max-width: rem(1126);
+        }
+
+        // Small devices (landscape phones, less than 768px)
+        // @media (max-width: 767.98px) { ... }
+        @include media-breakpoint-down(sm) {
+            position: fixed;
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+    // Small devices (landscape phones, less than 768px)
+    // @media (max-width: 767.98px) { ... }
+    @include media-breakpoint-down(sm) {
+        background-color: $white;
+        border-radius: 0px;
+        margin-bottom: 0px;
+        height: 85vh;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+}

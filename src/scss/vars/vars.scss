@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+// project global prefix
+$prefix-base:'media';
+
+// base color 
+$white: #ffffff;
+$black: #000000;
+$offwhite: #F4F5F9;
+$othwhite:#F8F9FB;
+$blue: #5d37fe;
+$background-color-base: $offwhite; // Default grey background color
+$input-placeholder-color: hsl(0, 0, 75%);
+$copyright-color-dark: rgba(0,0,0,0.45);
+
+// font-family
+$font-family-base: 'Poppins',
+'Arial Narrow Bold',
+Arial,
+sans-serif;
+
+//default border radius
+$border-radius-base:20;
+$border-radius-input-base:10;
+
+/***********Base Styles************/
+html,
+body {
+    background-color: $background-color-base;
+    margin: 0;
+    overflow: hidden;
+    font-family: $font-family-base;
+}
+.blueFont{
+    color: $blue;
+}
+
+

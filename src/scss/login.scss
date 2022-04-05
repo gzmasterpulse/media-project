@@ -1,0 +1,213 @@
+@import 'mixin';
+
+/**********Login UI Styles*************/
+/**
+** include mixin path from 'framework/mixins/_breakpoints.scss'
+xs: 0,
+sm: 576px,
+md: 768px,
+lg: 992px,
+xl: 1200px,
+xxl:1441px
+**/
+.#{$prefix-base}-container {
+    background-color: $white;
+    border-radius: rem($border-radius-base);
+    margin: 3rem auto;
+    height: calc(100vh - 3rem*2);
+
+    // Small devices (landscape phones, less than 768px)
+    // @media (max-width: 767.98px) { ... }
+    @include media-breakpoint-down(sm) {
+        margin: 0 auto;
+        height: 100vh;
+        border-radius: 0px;
+    }
+
+    &-item {
+        height: 100%;
+    }
+
+    &-banner {
+        width: 100%;
+        height: calc(100vh - 3rem*2 - 1.5rem*2);
+        margin-top: rem(24);
+        margin-bottom: rem(24);
+        border-radius: rem($border-radius-base);
+        background: url('../assets/image.jpg') center no-repeat;
+        background-size: cover;
+
+        // Small devices (landscape phones, less than 768px)
+        // @media (max-width: 767.98px) { ... }
+        @include media-breakpoint-down(sm) {
+            display: none;
+        }
+
+
+    }
+
+    &-main {
+        position: relative;
+        width: 60%;
+        height: calc(100vh - 4rem*2);
+        margin: rem(15) auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        justify-items: center;
+
+        // Small devices (landscape phones, less than 768px)
+        // @media (max-width: 767.98px) { ... }
+        @include media-breakpoint-down(sm) {
+            width: 90%;
+            height: 100vh;
+            margin: 0 auto;
+        }
+
+        &-logo {
+            position: absolute;
+            top: rem(50);
+
+            img {
+                width: 60%;
+            }
+        }
+
+        &-login {
+            padding-top: rem(100);
+
+            // Small devices (landscape phones, less than 768px)
+            // @media (max-width: 767.98px) { ... }
+            @include media-breakpoint-down(sm) {
+                padding-top: 0;
+            }
+
+            &-title {
+                font-weight: 700;
+                font-size: rem(20);
+                padding-bottom: rem(50);
+
+                // Small devices (landscape phones, less than 768px)
+                // @media (max-width: 767.98px) { ... }
+                @include media-breakpoint-down(sm) {
+                    font-size: rem(25);
+                }
+            }
+        }
+
+        &-copyright {
+            position: absolute;
+            width: 100%;
+            bottom: rem(40);
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            font-size: rem(11);
+            color: $copyright-color-dark;
+
+            // Small devices (landscape phones, less than 768px)
+            // @media (max-width: 767.98px) { ... }
+            @include media-breakpoint-down(sm) {
+                font-size: rem(13);
+                bottom: rem(60);
+            }
+        }
+    }
+
+}
+
+.#{$prefix-base}-input {
+    background-color: $offwhite;
+    border: 1px solid $white;
+    border-radius: rem($border-radius-input-base);
+    font-size: rem(12);
+    height: rem(37);
+    //include mixin from 'scss/mixin.scss'
+    @include placeHolder();
+
+    &:not(:first-child) {
+        padding-left: rem(47);
+    }
+
+    // Small devices (landscape phones, less than 768px)
+    // @media (max-width: 767.98px) { ... }
+    @include media-breakpoint-down(sm) {
+        height: rem(50);
+        font-size: rem(14);
+
+        &:not(:first-child) {
+            padding-left: rem(55);
+        }
+    }
+}
+
+.#{$prefix-base}-button {
+    margin-top: rem(25);
+    width: 100%;
+    height: rem(39);
+    background-color: $blue;
+    font-size: rem(12);
+    border-radius: rem($border-radius-input-base);
+
+    // Small devices (landscape phones, less than 768px)
+    // @media (max-width: 767.98px) { ... }
+    @include media-breakpoint-down(sm) {
+        height: rem(52);
+        font-size: rem(14);
+    }
+
+}
+
+.#{$prefix-base}-user {
+    height: rem(37);
+    line-height: 1.5;
+    position: relative;
+
+    // Small devices (landscape phones, less than 768px)
+    // @media (max-width: 767.98px) { ... }
+    @include media-breakpoint-down(sm) {
+        height: rem(50);
+    }
+}
+
+.#{$prefix-base}-user-icon {
+    height: rem(32);
+    width: rem(32);
+    position: absolute;
+    top: 50%;
+    left: rem(3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    background-color: $white;
+    border: 1px solid $white;
+    border-radius: rem($border-radius-input-base);
+    transform: translateY(-50%);
+
+    img {
+        width: 40%;
+    }
+
+    // Small devices (landscape phones, less than 768px)
+    // @media (max-width: 767.98px) { ... }
+    @include media-breakpoint-down(sm) {
+        height: rem(45);
+        width: rem(45);
+    }
+
+}
+
+.form-forgot-link {
+    float: right;
+    text-decoration: none;
+    color: $input-placeholder-color;
+    font-size: rem(12);
+
+    // Small devices (landscape phones, less than 768px)
+    // @media (max-width: 767.98px) { ... }
+    @include media-breakpoint-down(sm) {
+        font-size: rem(14);
+    }
+}
