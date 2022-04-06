@@ -72,13 +72,17 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 # Media Manager Project Structure
 
-This project use bootstrap framework.
+This project use scss(contain mixin、function、media query、variable、rem and vh features)、recoil state share、private route auth、react hooks and other related technologies.
+
+### React-Route Version
+
+This React app router is based on react-router-dom6.3
 
 ````
 ├── README.md
 ├── jsconfig.json
 ├── package.json
-├── public
+├── public                  /***********Public Assets***********/
 │   ├── favicon.ico
 │   ├── index.html
 │   ├── logo192.png
@@ -86,8 +90,8 @@ This project use bootstrap framework.
 │   ├── manifest.json
 │   └── robots.txt
 ├── src
-│   ├── App.js
-│   ├── assets
+│   ├── App.js              /************React Root Container**************/
+│   ├── assets              /************Assets*************/
 │   │   ├── background.png
 │   │   ├── image.jpg
 │   │   ├── logo.png
@@ -95,24 +99,24 @@ This project use bootstrap framework.
 │   │   ├── user-icon.png
 │   │   └── username-icon.png
 │   ├── components
-│   │   ├── Nav.js   /***WebSite Nav Compoment****/
+│   │   ├── Nav.js          /************WebSite Nav Compoment************/
 │   │   ├── login
-│   │   │   └── Index.js  /***WebSite Login Compoment**/
+│   │   │   └── Index.js    /************WebSite Login Compoment**********/
 │   │   └── route
-│   │       └── Index.js
+│   │       └── Index.js   /************WebSite Private Route**********/
 │   ├── hooks
-│   │   ├── FetchAction.js
-│   │   └── UserAction.js
+│   │   ├── FetchAction.js  /************Fetch API Hook**********/
+│   │   └── UserAction.js   /************User Hook**********/
 │   ├── index.js
 │   ├── pages
-│   │   ├── LoginPage.js
-│   │   └── MainPage.js
+│   │   ├── LoginPage.js    /************Login Page**********/
+│   │   └── MainPage.js     /************Main Page**********/
 │   ├── reportWebVitals.js
 │   ├── route
-│   │   └── Router.js
+│   │   └── Router.js       /************WebSite Route Config**********/
 │   ├── scss
-│   │   ├── app.scss
-│   │   ├── framework
+│   │   ├── app.scss        /************Main CSS**********/
+│   │   ├── framework       /************Framework CSS**********/
 │   │   │   ├── _alert.scss
 │   │   │   ├── _badge.scss
 │   │   │   ├── _breadcrumb.scss
@@ -206,12 +210,12 @@ This project use bootstrap framework.
 │   │   │   │   └── _visibility.scss
 │   │   │   └── vendor
 │   │   │       └── _rfs.scss
-│   │   ├── login.scss
-│   │   ├── main.scss
-│   │   ├── mixin.scss
+│   │   ├── login.scss      /************LoginUI CSS**********/
+│   │   ├── main.scss       /************MainUI CSS**********/
+│   │   ├── mixin.scss      /************Mixin**********/
 │   │   └── vars
-│   │       └── vars.scss
+│   │       └── vars.scss   /************CSS Variable definition**********/
 │   └── state
-│       └── Auth.js
+│       └── Auth.js         /************Authentication Recoil State**********/
 └── yarn.lock
 
