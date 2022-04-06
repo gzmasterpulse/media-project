@@ -7,12 +7,12 @@
 import { useSetRecoilState } from "recoil";
 import { useNavigate } from "react-router-dom";
 import { authAtom } from "state/Auth";
-import {useFetchAction} from "./FetchAction";
+import { useFetchAction } from "./FetchAction";
 
 function useUserActions() {
     const baseUrl = `${process.env.REACT_APP_API_URI}`;//Read .env variable
     const fetchProvier = useFetchAction();
-    const navigate=useNavigate();
+    const navigate = useNavigate();
     const setAuth = useSetRecoilState(authAtom);
     return {
         login,
@@ -26,20 +26,15 @@ function useUserActions() {
      *@variable2: password
     */
     function login(username, password) {
-        return fetchProvier.post(`${baseUrl}/login-user`,{username,password})
-        .then(data=>{
-            if(data.success){
+        return fetchProvier.post(`${baseUrl}/login-user`, { username, password })
+            .then(data => {
                 console.log("%s---Hello %s,Welcome to Media Manager!", new Date(), username);
-                const user={username:username,token:data.content.accessToken};
-                localStorage.setItem("user",JSON.stringify(user));//Store User Data (container accessToken and username)
+                const user = { username: username, token: data.content.accessToken };
+                localStorage.setItem("user", JSON.stringify(user));//Store User Data (container accessToken and username)
                 setAuth(user);
-                navigate("/",{replace:true}); //navigate default url
+                navigate("/", { replace: true }); //navigate default url
                 return true;
-            } else{
-                return Promise.reject(data.error);
-            }
-            
-        })
+            })
     }
     /*
      *@description:User Logout Metho
@@ -49,7 +44,7 @@ function useUserActions() {
     function logout() {
         localStorage.removeItem("user");
         setAuth(null);
-        navigate("/login",{replace:true});
+        navigate("/login", { replace: true });
     }
 }
-export {useUserActions};
+export { useUserActions };
